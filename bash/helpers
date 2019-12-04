@@ -9,3 +9,4 @@ last() {
 		fc -ln -1 | sed '1s/^[[:space:]]*//'
 	fi
 }
+

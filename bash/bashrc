@@ -1,0 +1,6 @@
+
+# source all the files in bash
+source helpers
+source aliases
+
+PS1="\!> "
