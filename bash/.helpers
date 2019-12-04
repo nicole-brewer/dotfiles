@@ -1,0 +1,11 @@
+
+# echo the last n terminal commands
+# https://unix.stackexchange.com/questions/38072/how-can-i-save-the-last-command-to-a-file
+last() {
+	if [ -n "$1" ]
+	then
+		fc -ln -$1 | sed "s/^[ \t]*//"  # xargs -n1 echo #$(sed '1s/^[[:space:]]*//')
+	else
+		fc -ln -1 | sed '1s/^[[:space:]]*//'
+	fi
+}
