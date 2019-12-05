@@ -1,0 +1,11 @@
+# source all the files in bash
+source ../helpers
+source ../aliases
+
+# source local dotfiles in home
+for local in $HOME/.*.local
+do
+   source $local
+done
+
+

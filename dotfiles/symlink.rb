@@ -2,7 +2,6 @@
 
 require "fileutils"
 
-
 def symlink_to_home(sourcepath)
 
    sourcepath = File.join(Dir.pwd, sourcepath) 
@@ -24,3 +23,12 @@ def symlink_to_home(sourcepath)
    puts "symlink!"
 end
 
+def symlink_all_dotfiles(path)
+
+   Dir.chdir(path)
+   # Get all directories (recursively) called "dot"
+   dot_dirs = Dir.glob("**/*/").select {|f| File.basename(f) == "dot" }
+   # Get all the files in the dot/ directories
+   dotfiles = dot_dirs.collect {|dir| Dir.glob(File.join(dir, "*"))}.flatten
+   dotfiles.each { |sourcepath| symlink_to_home(sourcepath) } 
+end 
