@@ -1,6 +1,9 @@
-# source all the files in bash
-source ../helpers
-source ../aliases
+# exports dotfiles root directory
+source dotfiles_root
+
+# bash
+source $DOT/bash/helpers
+source $DOT/bash/aliases
 
 # source local dotfiles in home
 for local in $HOME/.*.local
