@@ -1,0 +1,59 @@
+" Don't try to be vi compatible
+set nocompatible
+" Helps force plugins to load correctly when it is turned back on below
+filetype off
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'micha/vim-colors-solarized'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+call vundle#end()
+filetype plugin indent on
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+
+set modelines=0
+set number
+
+" Encoding
+set encoding=utf-8
+
+" Whitespace
+set nowrap
+set shiftwidth=3
+set expandtab
+set noshiftround
+
+" searching
+nnoremap / /\v
+vnoremap / /\v
+
+" Turn on syntax highlighting
+syntax on
+
+" Color scheme (terminal)
+set t_Co=256
+set background=dark
+let g:solarized_termtrans=1
+let g:solarized_termcolors=256
+colorscheme solarized
+
+" Airline
+let g:airline_solarized_gb='dark'
