@@ -43,6 +43,12 @@ set encoding=utf-8
 let mapleader = " "
 let maplocalleader = "_"
 
+" leave insert mode
+" both directions so you can press both keys at once
+inoremap ii <esc>
+" undo accidental insert mode
+inoremap uu <esc>u 
+
 " For indents that consist of 4 spaces
 " Tabs are bad for collaborative code
 set tabstop=8 softtabstop=4 expandtab shiftwidth=4 smarttab
