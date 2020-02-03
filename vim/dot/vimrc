@@ -37,6 +37,11 @@ set nowrap
 " Encoding
 set encoding=utf-8
 
+" https://superuser.com/questions/693528/vim-is-there-a-downside-to-using-space-as-your-leader-key
+" Leader key, used to precede a set of new mappings that don't clash with the
+" ones native to vim. 
+let mapleader = " "
+let maplocalleader = "_"
 
 " For indents that consist of 4 spaces
 " Tabs are bad for collaborative code
