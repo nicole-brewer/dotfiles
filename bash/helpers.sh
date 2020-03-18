@@ -2,6 +2,7 @@
 # echo the last n terminal commands
 # https://unix.stackexchange.com/questions/38072/how-can-i-save-the-last-command-to-a-file
 # my fc
+# mfc [<number-of-lines>] 
 mfc() {
         if [ -n "$2" ]
         then

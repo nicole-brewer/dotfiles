@@ -1,2 +1,1 @@
-
 alias path="echo $PATH | tr \":\" \"\n\"s"

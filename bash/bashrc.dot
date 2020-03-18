@@ -1,14 +1,12 @@
-# exports dotfiles root directory
-source dotfiles_root
+DOT=$HOME/.dotfiles
 
 # bash
-source $DOT/bash/helpers
-source $DOT/bash/aliases
+source $DOT/bash/helpers.sh
+source $DOT/bash/aliases.sh
 
 # source local dotfiles in home
 for local in $HOME/.*.local
 do
    source $local
 done
-
 
