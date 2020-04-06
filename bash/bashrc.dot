@@ -1,5 +1,10 @@
 DOT=$HOME/.dotfiles
 
+PATH="$HOME/bin:$PATH"
+# add coreutils to path so we don't have to use the
+# g prefix on gnu utils on macOS
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
 # bash
 source $DOT/bash/helpers.sh
 source $DOT/bash/aliases.sh
