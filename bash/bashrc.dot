@@ -1,6 +1,6 @@
 DOT=$HOME/.dotfiles
 
-PATH="$HOME/bin:$PATH"
+PATH="$HOME/.local/bin:$PATH"
 # add coreutils to path so we don't have to use the
 # g prefix on gnu utils on macOS
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
@@ -10,8 +10,13 @@ source $DOT/bash/helpers.sh
 source $DOT/bash/aliases.sh
 
 # source local dotfiles in home
-for local in $HOME/.*.local
+for file in $HOME
 do
-   source $local
+   if [ "$file" == "*.local" ]
+   then
+       source $local
+   fi
 done
 
+# Add Haskell compiler to path
+[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
