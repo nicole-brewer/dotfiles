@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/nicolebrewer/.R'
+let g:netrw_dirhist_2='/Users/nicolebrewer/.conda'
+let g:netrw_dirhist_3='/Users/nicolebrewer/.rstudio-desktop'
+let g:netrw_dirhist_4='/Users/nicolebrewer/.ipython'
+let g:netrw_dirhist_5='/Users/nicolebrewer/.jupyter'
+let g:netrw_dirhist_6='/Users/nicolebrewer/.subversion'
