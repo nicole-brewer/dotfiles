@@ -2,3 +2,5 @@
 [user]
 	name = Nicole Brewer
 	email = brewer36@purdue.edu
+[push]
+	default = simple
