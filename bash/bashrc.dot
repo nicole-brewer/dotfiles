@@ -5,6 +5,8 @@ PATH="$HOME/.local/bin:$PATH"
 # g prefix on gnu utils on macOS
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
+eval 'dircolors $DOT/shell/dircolors-solarized/dircolors.ansi-dark'
+
 # bash
 source $DOT/bash/helpers.sh
 source $DOT/bash/aliases.sh
