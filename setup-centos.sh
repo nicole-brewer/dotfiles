@@ -2,4 +2,4 @@
 
 sudo yum install vim-enhanced git  xorg-x11-xauth
 ./vim/setup.sh
-
+./shell/setup.sh
