@@ -1,16 +1,30 @@
 #!/usr/bin/env bash
 
 # install homebrew package manager
-cd /usr/local
-mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 brew install coreutils
 
-# install miniconda3
-curl -o https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+# install git and authenticate with a github token (in developer settings)
+brew install git
+brew install gh
+gh auth login
+
+# install miniconda
+brew install --cask miniconda
+
+# initialize conda with zsh, the default shell for macos
+conda init zsh
+conda init bash
+
+# you don't have to restart as suggested if you source the file
+source ~/.bashrc
 
 # this prevents conda from initializing for every shell startup
 conda config --set auto_auctivate_base false
-source ~/.bashrc
-conda install jupyter
+conda config --prepend channels conda-forge
+
+# create a base jupyter notebook environment to build from
+conda create -n jupyter notebook jupyterlab voila
+conda install -n jupyter -c fastai nbdev fastcore fastrelease
 
