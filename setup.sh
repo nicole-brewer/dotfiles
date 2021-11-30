@@ -1,7 +1,9 @@
 #!/bin/bash
 
+## TODO: consider replacing with stow: https://alexpearce.me/2016/02/managing-dotfiles-with-stow/ 
 for file in $(find . -name "*.dot")
 do
+	file=$(readlink -f $file)
 	basename=$(basename $file)
 	filename="${basename%.*}"
 	dotfile=".${filename}"

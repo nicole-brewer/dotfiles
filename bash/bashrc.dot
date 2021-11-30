@@ -1,4 +1,4 @@
-DOT=$HOME/.dotfiles
+DOT=$(pwd)
 
 PATH="$HOME/.local/bin:$PATH"
 # add coreutils to path so we don't have to use the
@@ -23,4 +23,4 @@ do
 done
 
 # Add Haskell compiler to path
-[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
+# [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
