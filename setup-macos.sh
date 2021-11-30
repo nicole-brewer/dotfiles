@@ -13,6 +13,9 @@ gh auth login
 # install miniconda
 brew install --cask miniconda
 
+# install mamba, a faster implementation of conda
+conda install mamba -n base -c conda-forge
+
 # initialize conda with zsh, the default shell for macos
 conda init zsh
 conda init bash
@@ -24,6 +27,7 @@ source ~/.bashrc
 conda config --set auto_auctivate_base false
 conda config --prepend channels conda-forge
 
+# TODO: shove this into an environment file
 # create a base jupyter notebook environment to build from
 conda create -n jupyter notebook jupyterlab voila
 conda install -n jupyter -c fastai nbdev fastcore fastrelease

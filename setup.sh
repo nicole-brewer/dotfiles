@@ -1,10 +1,7 @@
 #!/bin/bash
 
-cd $HOME/.dotfiles
-
 for file in $(find . -name "*.dot")
 do
-	file=$(readlink -f $file)
 	basename=$(basename $file)
 	filename="${basename%.*}"
 	dotfile=".${filename}"
@@ -20,7 +17,7 @@ do
                 rm $dotfile
                 ln -s -v $file $dotfile
             else
-                echo "Link to $dotfile -> $file already exists."
+                echo "Link to $dotfile -> $linkfile already exists."
             fi
         # if symbolic link doesn't exist
         else
