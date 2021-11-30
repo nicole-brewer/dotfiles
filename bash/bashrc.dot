@@ -1,4 +1,4 @@
-DOT=$(pwd)
+DOT=$(<install_dir.txt)
 
 PATH="$HOME/.local/bin:$PATH"
 # add coreutils to path so we don't have to use the
