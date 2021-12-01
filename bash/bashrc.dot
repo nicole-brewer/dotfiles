@@ -14,13 +14,8 @@ source $DOT/bash/helpers.sh
 source $DOT/bash/aliases.sh
 
 # source local dotfiles in home
-for file in $HOME
-do
-   if [ "$file" == "*.local" ]
-   then
-       source $local
-   fi
-done
+source ~/.bashrc.local
+source ~/.bash_profile.local
 
 # Add Haskell compiler to path
 # [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"

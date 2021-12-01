@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
-sudo yum install vim-enhanced git  xorg-x11-xauth
-./vim/setup.sh
-./shell/setup.sh
+./setup-vim.sh
+./setup-gnu-ls.sh
+sudo dnf install git gh
+echo "Create a personal access token: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-token"
+echo "Select GitHub.com > HTTPS > Y > Paste an authentication token"
+gh auth login
