@@ -1,4 +1,5 @@
-DOT=$(<install_dir.txt)
+# source config file
+source $HOME/.dotconfig
 
 PATH="$HOME/.local/bin:$PATH"
 # add coreutils to path so we don't have to use the
@@ -14,8 +15,14 @@ source $DOT/bash/helpers.sh
 source $DOT/bash/aliases.sh
 
 # source local dotfiles in home
-source ~/.bashrc.local
-source ~/.bash_profile.local
+if [ -f ~/.bashrc.local ]; then
+    source ~/.bashrc.local
+fi
+
+# NOTE: if this file sources .bashrc, there will be an infinite loop
+if [ -f ~/.bash_profile.local ]; then
+    source ~/.bash_profile.local
+fi
 
 # Add Haskell compiler to path
 # [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"

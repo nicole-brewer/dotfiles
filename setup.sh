@@ -1,6 +1,8 @@
 #!/bin/bash
 
-echo $(pwd) > install_dir.txt
+# overwrite previous config since there is only one variable for now
+# when there is more than one config variable, use python configobj to read and write
+echo "DOT=$(pwd)" > $HOME/.dotconfig
 
 ## TODO: consider replacing with stow: https://alexpearce.me/2016/02/managing-dotfiles-with-stow/ 
 for file in $(find . -name "*.dot")
