@@ -2,13 +2,12 @@
 source $HOME/.dotconfig
 
 PATH="$HOME/.local/bin:$PATH"
-# add coreutils to path so we don't have to use the
-# g prefix on gnu utils on macOS
-PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-
 PS1="$(pwd)>  \!$ "
 
-eval $(dircolors $DOT/dircolors-solarized/dircolors.ansi-universal)
+# use solarized color scheme when printing directories
+# use gnu ls (gls) instead of mac os ls under the hood
+alias ls="/opt/homebrew/opt/coreutils/libexec/gnubin/ls"
+eval $(gdircolors $DOT/solarized/dircolors-solarized/dircolors.ansi-universal)
 
 # bash
 source $DOT/bash/helpers.sh

@@ -1,0 +1,20 @@
+# source config file
+source $HOME/.dotconfig
+
+PATH="$HOME/.local/bin:$PATH"
+PS1="$(pwd)>  \!$ "
+
+# use solarized color scheme when printing directories
+# use gnu ls (gls) instead of mac os ls under the hood
+alias ls="/opt/homebrew/opt/coreutils/libexec/gnubin/ls"
+eval `gdircolors $DOT/solarized/dircolors-solarized/dircolors.ansi-universal`
+
+# source local dotfiles in home
+if [ -f ~/.zshrc.local ]; then
+    source ~/.zshrc.local
+fi
+
+# NOTE: if this file sources .bashrc, there will be an infinite loop
+if [ -f ~/.zprofile.local ]; then
+    source ~/.zprofile.local
+fi
