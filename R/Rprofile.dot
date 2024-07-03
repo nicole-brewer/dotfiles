@@ -5,7 +5,7 @@ if (interactive()) {
 options(
   usethis.full_name = "Nicole Brewer",
   usethis.description = list(
-    `Authors@R` = 'person("Nicole", "Brewer", email = "brewer36@purdue.edu", role = c("aut", "cre"), 
+    `Authors@R` = 'person("Nicole", "Brewer", email = "nbrewer6@asu.edu", role = c("aut", "cre"), 
     comment = c(ORCID = "0000-0002-6723-8940"))',
     License = "MIT + file LICENSE",
     Version = "0.0.0.9000"

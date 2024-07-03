@@ -6,7 +6,7 @@ PS1="$(pwd)>  \!$ "
 
 # use solarized color scheme when printing directories
 # use gnu ls (gls) instead of mac os ls under the hood
-alias ls="/opt/homebrew/opt/coreutils/libexec/gnubin/ls"
+alias ls="/opt/homebrew/bin/gls"
 eval $(gdircolors $DOT/solarized/dircolors-solarized/dircolors.ansi-universal)
 
 # bash
@@ -25,3 +25,4 @@ fi
 
 # Add Haskell compiler to path
 # [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
+export PATH="/Users/nabrewer/Library/Python/3.9/bin:$PATH"

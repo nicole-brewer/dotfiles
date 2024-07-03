@@ -20,3 +20,10 @@ brew install --cask zotero
 brew install --cask alfred
 brew install --cask appcleaner
 brew install --cask iterm2
+brew install --cask slack
+brew install --cask visual-studio-code
+brew install --cask obsidian
+# brew install --cask unite # Turn any website into a lightweight, customizable, native app on your Mac. Was really nice but requires subscription
+brew install --cask scrivener
+brew install --cask rstudio
+brew install --cask espanso

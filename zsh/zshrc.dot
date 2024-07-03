@@ -6,7 +6,7 @@ PS1="$(pwd)>  \!$ "
 
 # use solarized color scheme when printing directories
 # use gnu ls (gls) instead of mac os ls under the hood
-alias ls="/opt/homebrew/opt/coreutils/libexec/gnubin/ls"
+alias ls="/opt/homebrew/bin/gls"
 eval `gdircolors $DOT/solarized/dircolors-solarized/dircolors.ansi-universal`
 
 # source local dotfiles in home
@@ -18,3 +18,11 @@ fi
 if [ -f ~/.zprofile.local ]; then
     source ~/.zprofile.local
 fi
+
+# so java can find the jdk
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include"
+# derived from https://stackoverflow.com/questions/35898734/pip-installs-packages-successfully-but-executables-not-found-from-command-line
+export PATH="/Users/nabrewer/Library/Python/3.9/bin:$PATH"
+export PATH="/Users/nabrewer/Library/Application\ Support/Hugo/0.122.0/hugo:$PATH"
+

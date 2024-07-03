@@ -18,5 +18,18 @@ gh auth login
 mkdir -p solarized/dircolors-solarized/
 curl -o solarized/dircolors-solarized/dircolors.ansi-universal https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-universal
 
+echo "Several tasks also need to be done by hand. Let's get started!"
+
 # instructions for enabling the solarized theme in iterm2
-echo "The next step must be done by hand...\n1. Open iTerm2\n2. Profiles > Default > Edit Profiles > Colors > Color Presets > Solarized Light"
+echo "We neeed to change our default color presets in iTerm2"
+echo "Profiles > Default > Edit Profiles > Colors > Color Presets > Solarized Light"
+echo "Opening iTerm2..."
+open ~/Applications/iTerm.app
+
+echo "We also want to download the Logitech Options and restore defaults"
+echo "Opening Firefox to the logitech website..."
+open -a Firefox https://support.logi.com/hc/en-us/articles/360025297893
+echo "More > Backups > Restore Settings from Backup"
+
+
+
