@@ -19,6 +19,30 @@ if [ -f ~/.zprofile.local ]; then
     source ~/.zprofile.local
 fi
 
+# automatically activate a conda environment when you cd into a directory
+# Variable to control auto activation of conda environment
+AUTO_ACTIVATE_CONDA=true
+
+cd() {
+    builtin cd "$@" || return
+    if [ "$AUTO_ACTIVATE_CONDA" = true ]; then
+        if [ -f environment.yml ] || [ -f environment.yaml ]; then
+            env_file=$( [ -f environment.yml ] && echo "environment.yml" || ([ -f environment.yaml ] && echo "environment.yaml") )
+            env_name=$(head -n 1 "$env_file" | cut -d' ' -f2)
+            if conda activate "$env_name"; then
+                echo "[Conda Auto-Activated] undo with"
+                echo "     conda deactivate"
+            else
+                echo "Failed to auto-activate conda. If there is a problem open"
+                echo "     vim ~/.zshrc"
+                echo "and set AUTO_ACTIVATE_CONDA=false"
+            fi
+        fi
+    fi
+}
+
+
+
 # so java can find the jdk
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include"
